@@ -1,11 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Comandos 
+  ### APP REACT
   Para descargar las dependencias: ```npm install```
   
   Para ejecutar la aplicación: ```npm start```  
   
   **IMPORTANTE:** Para poder utilizar el aplicativo es necesario instalar las dependencias primero con el comando **npm install**.
+  
+  ### FUNCTIONS
+  
+  Para ejecutar la función: ```func start```
 ## Datos de Logeo
 
 **Correo**: johann.paez@mail.escuelaing.edu.co
