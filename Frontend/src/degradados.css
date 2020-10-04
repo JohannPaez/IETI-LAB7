@@ -1,0 +1,8 @@
+.login, .register {
+    min-height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(135deg, #08185B, #949CBC);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
