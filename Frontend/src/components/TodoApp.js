@@ -16,11 +16,7 @@ export default class TodoApp extends Component {
     
     constructor(props) {
         super(props);
-        const listaInicial = [
-        {description:"Crear Vista Login", name: 'Carlos Sanchez', email: 'carlos@mail.com', status: 'Ready', dueDate: moment()},
-        {description:"Crear Vista Registro", name: 'Julian Benitez', email: 'julian@mail.com', status: 'In Progress', dueDate: moment()},
-        {description:"Crear Sidebar", name: 'Johann Campos', email: 'johann@mail.com', status: 'Done', dueDate: moment()},
-        {description:"Crear Carrito", name: 'Johann Campos', email: 'johann@mail.com', status: 'In Progress', dueDate: moment()}];    
+        const listaInicial = [];    
         this.state = {items: listaInicial, description:"", name: '', email: '', status: '', dueDate: null, 
         open: false, openFilter: false, dueFilter: null, emailFilter: null, statusFilter: null, itemsFilter: [], isFilter: false};
         this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
@@ -42,6 +38,7 @@ export default class TodoApp extends Component {
                
         
     }
+    
     handleFilter(e) {    
         var itemsFiltered = []
         for (var i = 0; i < this.state.items.length; i++) {
@@ -145,6 +142,7 @@ export default class TodoApp extends Component {
             dueDate: this.state.dueDate
         };
 
+        this.addTaskToPlanner(newItem);
 
         this.setState(prevState => ({
             items: prevState.items.concat(newItem),
@@ -188,7 +186,42 @@ export default class TodoApp extends Component {
         });
     }
 
+
+    componentDidMount() {
+        fetch('https://taskplanner-ieti-lab07.azurewebsites.net/api/add-task?code=CS8WVc0UAF2MkWGh3Udd55PRp3nP4Qf1/OE8sFwuyMkLz8JXSJm5sw==')
+            .then(response => response.json())
+            .then(data => {                   
+                this.setState({
+                    items: data
+                });
+            })
+            .catch(e => {
+                console.log("Error");
+                console.log(e);
+                alert("Ha ocurrido un error!");
+            });
+    }
     
+    addTaskToPlanner = (task) => {
+        fetch("https://taskplanner-ieti-lab07.azurewebsites.net/api/add-task?code=CS8WVc0UAF2MkWGh3Udd55PRp3nP4Qf1/OE8sFwuyMkLz8JXSJm5sw==", 
+          {method: "POST",
+             body: JSON.stringify(task),
+             mode: "cors",
+             headers: {
+                "Content-Type": "application/json"
+              }
+            })
+            .then(response => response.text())
+            .then((data) => {                
+              this.componentDidMount();            
+            })
+            .catch(e => {
+                console.log("Error");
+                console.log(e);
+                alert("An error has occurred!");
+            });
+    }
+
     render() {      
         return (
             <div className="App">

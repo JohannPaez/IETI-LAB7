@@ -16,16 +16,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Despliegue de la Aplicación
 
-[http://ieti-backend-lab06.eastus.azurecontainer.io:8080/](http://ieti-backend-lab06.eastus.azurecontainer.io:8080/)
+[Firebase Link 1](https://taskplanner-ieti-lab06-43ed1.web.app/)
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://gentle-scrubland-60628.herokuapp.com/)
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://storageietilab4.z13.web.core.windows.net/)
+[Firebase Link 2](https://taskplanner-ieti-lab06-43ed1.firebaseapp.com/)
+
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://serene-earth-78588.herokuapp.com/)
 
 ## Enunciado
 El enunciado del laboratorio está disponible [aquí](https://github.com/ieti-eci/2.1-task-planner-api).
 
 ## Autor
-Johann Sebastian Páez Campos - Laboratorio 04 IETI 10/09/2020
+Johann Sebastian Páez Campos - Laboratorio 06 IETI 01/10/2020
 
 
 ## Available Scripts
